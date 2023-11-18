@@ -2,7 +2,7 @@
 
 ## Overview
 
-This R project is designed to explore market volatility in the context of US-China trade tensions between 2018 and 2020. It provides a comprehensive analysis of technology stocks, highlighting how geopolitical events influenced market performance and volatility. The project is ideal for those interested in financial analysis, data science, and economic impacts of international relations.
+This R project is designed to explore market volatility in the context of US-China trade tensions between 2018 and 2020. It provides a comprehensive analysis of 14 technology stocks, highlighting the geopolitical impact on market performance.
 
 ## Data Sources
 
