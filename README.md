@@ -23,6 +23,12 @@ The datasets used for this analysis include:
 
 Below are some of the key visualizations generated from the analysis. These visuals aid in understanding the market trends, stock performance, and impacts of geopolitical events on tech stocks.
 
+### Event Study Analysis
+
+This plot represents the event study around a specific trade-related event, showing its immediate impact on tech stock prices.
+
+![Event Study](/path/to/event_study_Tariffs_on_$34B_Chinese_Goods.png)
+
 ### Cumulative Returns
 
 This graph shows the cumulative returns of a selected tech stock over a specific period, highlighting the impact of trade tensions.
@@ -34,12 +40,6 @@ This graph shows the cumulative returns of a selected tech stock over a specific
 This visualization provides a risk-return profile of various tech stocks, allowing for a comparative analysis of their performances.
 
 ![Risk-Return Profile](/path/to/Risk-Return_Profile_for_Stocks.png)
-
-### Event Study Analysis
-
-This plot represents the event study around a specific trade-related event, showing its immediate impact on tech stock prices.
-
-![Event Study](/path/to/event_study_Tariffs_on_$34B_Chinese_Goods.png)
 
 ## Prerequisites
 
