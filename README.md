@@ -19,24 +19,27 @@ Datasets used in this analysis are:
 - **Liquidity Analysis**: Investigates market liquidity changes due to trade events.
 - **Portfolio Simulation**: Analyzes overall performance of a tech stock portfolio.
 
-## Visualizations
-
-Key visualizations generated:
+## Key Visualizations
 
 ### Event Study Analysis
 
-Abnormal returns around trade-related events.  
+Abnormal returns around trade-related events:  
+
 ![Event Study](Visualizations/stock_price_movements_2018_2021_with_events.png)
 
 ### Cumulative Returns
 
-Cumulative returns for a tech stock, highlighting trade tension impacts.  
+Cumulative returns for a tech stock, highlighting trade tension impacts: 
+
 ![Cumulative Returns](Visualizations/AAPL_Cumulative_Returns.png)
 
 ### Rolling Volatility
 
-Displays tech stocks' rolling volatility from 2018 to 2021.  
+Displays tech stocks' rolling volatility from 2018 to 2022:
+
 ![Rolling-Volatility](Visualizations/rolling_volatility_2018_2021.png)
+
+*NOTE: Generated rolling volatility extends beyond project scope to verify plot functionality.*
 
 ## Prerequisites
 
