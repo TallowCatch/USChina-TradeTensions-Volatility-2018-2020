@@ -48,7 +48,6 @@ Measures of liquidity, inferred from price range and trading volume, showed no s
 ## Correlation Analysis
 Correlation matrices revealed that inter-stock correlations within the technology sector tended to increase during periods of high trade tension. This phenomenon points to a unification in stock responses to trade developments, potentially indicating a collective market assessment of trade news impacts. You can find the spreadsheet for this table ![here](Spreadsheets/Tech_Stocks_Correlation_Matrix.csv).
 
-Visual demonstration:
 ![Tech Stocks Correlation Matrix](Visualizations/Correlation_Matrix_Plot.png)
 
 ## Conclusion
