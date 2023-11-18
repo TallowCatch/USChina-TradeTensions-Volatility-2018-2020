@@ -27,19 +27,19 @@ Below are some of the key visualizations generated from the analysis. These visu
 
 This plot represents the event study around a specific trade-related event, showing its immediate impact on tech stock prices.
 
-![Event Study](/path/to/event_study_Tariffs_on_$34B_Chinese_Goods.png)
+![Event Study](Visualizations/stock_price_movements_2018_2021_with_events.png)
 
 ### Cumulative Returns
 
 This graph shows the cumulative returns of a selected tech stock over a specific period, highlighting the impact of trade tensions.
 
-![Cumulative Returns](/path/to/AAPL_Cumulative_Returns_With_Trade_Tension_Period.png)
+![Cumulative Returns](Visualizations/AAPL_Cumulative_Returns.png)
 
-### Risk-Return Profile
+### Rolling Volatility
 
-This visualization provides a risk-return profile of various tech stocks, allowing for a comparative analysis of their performances.
+This visualization displays the rolling volatility of tech stocks from 2018 to 2021, highlighting their risk fluctuations and market stability over time.
 
-![Risk-Return Profile](/path/to/Risk-Return_Profile_for_Stocks.png)
+![Rolling-Volatility](Visualizations/rolling_volatility_2018_2021.png)
 
 ## Prerequisites
 
