@@ -1,77 +1,68 @@
-# Tech Stock Analysis Project
+# Market Volatility Analysis: US-China Trade Tensions (2018-2020)
 
 ## Overview
 
-This project analyzes the impact of US-China trade tensions on the volatility and performance of technology stocks from 2018 to 2020. It includes event studies around significant trade events, risk-return profiling, and liquidity analysis, offering insights into the intricate dynamics of the stock market during geopolitical fluctuations.
+This R project is designed to explore market volatility in the context of US-China trade tensions between 2018 and 2020. It provides a comprehensive analysis of technology stocks, highlighting how geopolitical events influenced market performance and volatility. The project is ideal for those interested in financial analysis, data science, and economic impacts of international relations.
 
 ## Data Sources
 
-The datasets used for this analysis include:
+Datasets used in this analysis are:
 
-- S&P 500 historical data from [Kaggle](https://www.kaggle.com/datasets/henryhan117/sp-500-historical-data).
-- Big Tech stock prices from [Kaggle](https://www.kaggle.com/datasets/evangower/big-tech-stock-prices).
+- S&P 500 historical data: [Kaggle](https://www.kaggle.com/datasets/henryhan117/sp-500-historical-data).
+- Big Tech stock prices: [Kaggle](https://www.kaggle.com/datasets/evangower/big-tech-stock-prices).
 
 ## Components
 
-- **Event Studies** reveal the stock performance around key trade tension events.
-- **Risk-Return Analysis** profiles the return patterns of various stocks.
-- **Volatility Measurements** use GARCH models to quantify market risks.
-- **Liquidity Analysis** examines how trade events affected market liquidity.
-- **Portfolio Simulation** evaluates the collective performance of tech stocks.
+- **Event Studies**: Analysis of stock performance surrounding key trade tension events.
+- **Risk-Return Analysis**: Examines return patterns across different stocks.
+- **Volatility Measurements**: Utilizes GARCH models for market risk assessment.
+- **Liquidity Analysis**: Investigates market liquidity changes due to trade events.
+- **Portfolio Simulation**: Analyzes overall performance of a tech stock portfolio.
 
 ## Visualizations
 
-Below are some of the key visualizations generated from the analysis. These visuals aid in understanding the market trends, stock performance, and impacts of geopolitical events on tech stocks.
+Key visualizations generated:
 
 ### Event Study Analysis
 
-This plot represents the event study around a specific trade-related event, showing its immediate impact on tech stock prices.
-
+Abnormal returns around trade-related events.  
 ![Event Study](Visualizations/stock_price_movements_2018_2021_with_events.png)
 
 ### Cumulative Returns
 
-This graph shows the cumulative returns of a selected tech stock over a specific period, highlighting the impact of trade tensions.
-
+Cumulative returns for a tech stock, highlighting trade tension impacts.  
 ![Cumulative Returns](Visualizations/AAPL_Cumulative_Returns.png)
 
 ### Rolling Volatility
 
-This visualization displays the rolling volatility of tech stocks from 2018 to 2021, highlighting their risk fluctuations and market stability over time.
-
+Displays tech stocks' rolling volatility from 2018 to 2021.  
 ![Rolling-Volatility](Visualizations/rolling_volatility_2018_2021.png)
 
 ## Prerequisites
 
-Before running the analysis, ensure you have R installed along with the following packages: `dplyr`, `tidyr`, `ggplot2`, `xts`, `rugarch`, and others mentioned in the script comments.
+Ensure R is installed with packages: `dplyr`, `tidyr`, `ggplot2`, `xts`, `rugarch`, etc.
 
 ## Running the Analysis
 
-To run the scripts:
+1. Clone/download the repository.
+2. Load datasets into R from Kaggle.
+3. Execute the R scripts in the presented order.
 
-1. Clone or download the repository to your local machine.
-2. Load the datasets into R from the specified Kaggle sources.
-3. Execute the R scripts in the order they are presented.
+## GARCH Model Usage
 
-## Using the GARCH Model
-
-The GARCH model script can be adapted for personal use. Here's an example using AAPL stock data:
+For GARCH modeling, here's an example, using AAPL stock data:
 
 ```R
 # Load the rugarch package
 library(rugarch)
 
-# Assuming 'data' is your dataframe and contains AAPL stock data
-# Filter data for AAPL
+# Filter AAPL data, run GARCH Model, plot volatility
 aapl_data <- filter(data, stock_symbol == "AAPL")
-
-# Run the GARCH Model
 garch_fit_aapl <- runGarchModel(aapl_data)
-
-# Plot the volatility
 plotVolatility(garch_fit_aapl)
 ```
 
 ## Deployment
 
-The analysis can be executed on any machine with R and the required packages installed. No specific deployment steps are required unless integrated into a Shiny app or other interactive platforms.
+* Execute analysis on any R-enabled machine. No special deployment steps required unless integrating into a Shiny app or similar platforms.
+
