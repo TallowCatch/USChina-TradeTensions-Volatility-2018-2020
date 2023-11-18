@@ -19,6 +19,16 @@ Datasets used in this analysis are:
 - **Liquidity Analysis**: Investigates market liquidity changes due to trade events.
 - **Portfolio Simulation**: Analyzes overall performance of a tech stock portfolio.
 
+## Prerequisites
+
+Ensure R is installed with packages: `dplyr`, `tidyr`, `ggplot2`, `xts`, `rugarch`, etc.
+
+## Running the Analysis
+
+1. Clone/download the repository.
+2. Load datasets into R from Kaggle.
+3. Execute the R scripts in the presented order.
+
 ## Key Visualizations
 
 ### Event Study Analysis
@@ -41,16 +51,6 @@ Displays tech stocks' rolling volatility from 2018 to 2022:
 
 *NOTE: Generated rolling volatility extends beyond project scope to verify plot functionality.*
 
-## Prerequisites
-
-Ensure R is installed with packages: `dplyr`, `tidyr`, `ggplot2`, `xts`, `rugarch`, etc.
-
-## Running the Analysis
-
-1. Clone/download the repository.
-2. Load datasets into R from Kaggle.
-3. Execute the R scripts in the presented order.
-
 ## GARCH Model Usage
 
 For GARCH modeling, here's an example, using AAPL stock data:
@@ -64,6 +64,10 @@ aapl_data <- filter(data, stock_symbol == "AAPL")
 garch_fit_aapl <- runGarchModel(aapl_data)
 plotVolatility(garch_fit_aapl)
 ```
+
+Here's how it should look like:
+
+![GARCH-Model](Visualizations/AAPL_volatility_white_bg.png)
 
 ## Deployment
 
