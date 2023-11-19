@@ -69,6 +69,103 @@ Here's how it should look like:
 
 ![GARCH-Model](Visualizations/AAPL_volatility_white_bg.png)
 
+## Data Cleaning Script
+
+Run this script to clean and prepare the tech stock price data. The datasets should be extracted to an "archive" folder within the working directory.
+
+```r
+library(fs)
+library(tidyverse)
+library(here)
+library(janitor)
+
+# Source for datasets
+"https://www.kaggle.com/datasets/evangower/big-tech-stock-prices"
+
+# Reading and cleaning stock prices data
+big_tech_stock_prices_list <- purrr::map(
+  fs::dir_ls(
+    here::here("data", "2023", "2023-02-07", "archive"),
+    glob = "*.csv"
+  ),
+  \(path) {
+    ticker <- fs::path_file(path) |> fs::path_ext_remove()
+    readr::read_csv(
+      file = path,
+      col_types = cols(
+        Date = col_date(format = ""),
+        Open = col_double(),
+        High = col_double(),
+        Low = col_double(),
+        Close = col_double(),
+        `Adj Close` = col_double(),
+        Volume = col_double()
+      )
+    ) |> 
+      dplyr::mutate(stock_symbol = ticker, .before = 1)
+  }
+)
+
+big_tech_stock_prices <- purrr::list_rbind(big_tech_stock_prices_list) |> 
+  janitor::clean_names()
+dplyr::glimpse(big_tech_stock_prices)
+
+# Writing the cleaned data to a CSV file
+readr::write_csv(
+  big_tech_stock_prices,
+  here::here(
+    "data", "2023", "2023-02-07",
+    "big_tech_stock_prices.csv"
+  )
+)
+
+# Counting the number of records for each stock symbol
+big_tech_stock_prices |> 
+  dplyr::count(stock_symbol, sort = TRUE)
+
+# Creating a lookup table for the stock symbols and corresponding companies
+tibble::tibble(
+  stock_symbol = c(
+    "AAPL",
+    "ADBE",
+    "AMZN",
+    "CRM",
+    "CSCO",
+    "GOOGL",
+    "IBM",
+    "INTC",
+    "META",
+    "MSFT",
+    "NFLX",
+    "NVDA",
+    "ORCL",
+    "TSLA"
+  ),
+  company = c(
+    "Apple Inc.",
+    "Adobe Inc.",
+    "Amazon.com, Inc.",
+    "Salesforce, Inc.",
+    "Cisco Systems, Inc.",
+    "Alphabet Inc.",
+    "International Business Machines Corporation",
+    "Intel Corporation",
+    "Meta Platforms, Inc.",
+    "Microsoft Corporation",
+    "Netflix, Inc.",
+    "NVIDIA Corporation",
+    "Oracle Corporation",
+    "Tesla, Inc."
+  )
+) |> 
+  readr::write_csv(
+    here::here(
+      "data", "2023", "2023-02-07",
+      "big_tech_companies.csv"
+    )
+  )
+```
+
 ## Deployment
 
 * Execute analysis on any R-enabled machine. No special deployment steps required unless integrating into a Shiny app or similar platforms.
